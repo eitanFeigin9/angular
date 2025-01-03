@@ -1,0 +1,17 @@
+<div class="country-details-container">
+  <h2 class="section-title">Selected Country Details</h2>
+  <div class="country-info">
+    <div class="country-text">
+      <p><strong>Total IP Ranges:</strong> {{ totalIpRanges }}</p>
+    </div>
+  </div>
+  <!-- Display the IP ranges of the requested country -->
+  <div class="ip-scrollable-list">
+    <h3>IP Ranges:</h3>
+    <ul>
+      <li *ngFor="let range of ipRanges">
+        {{ range.ipStart }} - {{ range.ipEnd }}
+      </li>
+    </ul>
+  </div>
+</div>

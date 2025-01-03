@@ -1,0 +1,46 @@
+<!-- Display search bar for requested country -->
+<div class="search-bar">
+  <mat-form-field class="example-full-width">
+    <input
+      type="text"
+      placeholder="Enter country name"
+      matInput
+      [(ngModel)]="inputCountry"
+      [matAutocomplete]="auto"
+      (input)="onSearchInput()"
+    />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayCountry">
+      <mat-option
+        *ngFor="let option of filteredCountries"
+        [value]="option"
+        (click)="searchByCountry()"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <button (click)="searchByCountry()" class="search-button">
+    🔍 Search
+  </button>
+</div>
+
+<!-- Display loader -->
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<!-- Display search results -->
+<div *ngIf="searchResults.length > 0" class="search-results">
+  <h3>Results for "{{ validCountry }}":</h3>
+  <img
+    [src]="searchFlagUrl"
+    [alt]="validCountry"
+    class="country-flag"
+  />
+  <app-country-details
+    [totalIpRanges]="searchResults.length"
+    [ipRanges]="searchResults"
+  ></app-country-details>
+</div>
+<!-- Display the IP per area table -->
+<div class="ip-list-section">
+  <app-ip-list></app-ip-list>
+</div>

@@ -1,0 +1,26 @@
+  <!-- Display the table of the IP values per area -->
+<div class="ip-list-container">
+  <h2 class="section-title">IP List</h2>
+  <table class="ip-table">
+    <thead>
+      <tr>
+        <th>IP Range Start</th>
+        <th>IP Range End</th>
+        <th (click)="sortBy('countryName')">Country 🔼</th>
+        <th (click)="sortBy('region')">Region 🔼</th>
+        <th (click)="sortBy('city')">City 🔼</th>
+        <th (click)="sortBy('countryCode')">Country Code 🔼</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ip of ipList">
+        <td>{{ ip.ipStart }}</td>
+        <td>{{ ip.ipEnd }}</td>
+        <td>{{ ip.countryName }}</td>
+        <td>{{ ip.region }}</td>
+        <td>{{ ip.city }}</td>
+        <td>{{ ip.countryCode }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

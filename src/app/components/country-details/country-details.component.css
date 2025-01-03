@@ -1,0 +1,45 @@
+.country-details-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .country-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .country-flag {
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .country-text {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .country-text p {
+    margin: 5px 0;
+  }
+
+  .ip-scrollable-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 15px;
+  }
+  
+  
